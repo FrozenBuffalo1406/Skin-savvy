@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "skinSavvy"
+rootProject.name = "SkinSavvy"
 include(":app")
+ 
