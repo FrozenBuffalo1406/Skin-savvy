@@ -1,4 +1,4 @@
-package com.capstone.skinsavvy.ui
+package com.capstone.skinsavvy.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

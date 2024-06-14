@@ -1,4 +1,4 @@
-package com.capstone.skinsavvy.ui
+package com.capstone.skinsavvy.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -12,10 +12,6 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_in)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
     }
 }
