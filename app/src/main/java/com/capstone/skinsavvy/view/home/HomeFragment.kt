@@ -1,4 +1,4 @@
-package com.capstone.skinsavvy.view.ui.home
+package com.capstone.skinsavvy.ui.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

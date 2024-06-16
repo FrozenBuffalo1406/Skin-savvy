@@ -1,4 +1,4 @@
-package com.capstone.skinsavvy.view.ui.home
+package com.capstone.skinsavvy.ui.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
