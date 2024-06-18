@@ -69,6 +69,9 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
 
+    //splash Screen lib
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
     //glide
     implementation(libs.glide)
 

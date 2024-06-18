@@ -4,12 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.capstone.skinsavvy.data.repository.AuthRepository
 import com.capstone.skinsavvy.data.response.ErrorResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class SignUpViewModel(private val userRepository) : ViewModel() {
+class SignUpViewModel(private val userAuthRepository: AuthRepository) : ViewModel() {
 
     private val _registrationStatus = MutableLiveData<RegistrationStatus>()
     val registrationStatus: LiveData<RegistrationStatus>
@@ -29,7 +30,7 @@ class SignUpViewModel(private val userRepository) : ViewModel() {
         viewModelScope.launch {
             _registrationStatus.value = RegistrationStatus.Loading
             try {
-                val response = userRepository.register(name, email, password)
+                val response = userAuthRepository.register(name, email, password)
                 if (!response.error) {
                     _registrationStatus.value = RegistrationStatus.Success(response.message ?: "Account Created Successfully")
                 } else {
