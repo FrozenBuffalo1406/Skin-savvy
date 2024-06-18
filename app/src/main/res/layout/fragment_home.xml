@@ -1,22 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.home.HomeFragment">
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/pale_white">
 
     <TextView
-        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:id="@+id/tv_name"
+        android:layout_marginTop="10dp"
+        android:text="Hello Belpin!"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+    <com.capstone.skinsavvy.view.costumview.SearchEditInput
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/search_edit_input"
+        android:layout_marginTop="12dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        tools:listitem="@layout/slider_item"
+        android:id="@+id/rv_imageslider"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_product_rec"
+        android:layout_marginTop="24dp"/>
+
+
+</LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">skinSavvy</string>
+    <string name="app_name">SkinSavvy</string>
     <string name="navigation_home">Home</string>
     <string name="navigation_notifications">Notifications</string>
     <string name="navigation_scan">Scan</string>
@@ -14,4 +14,8 @@
     <string name="welcome_desc">Menjadi katalis keindahan wajah yang alami</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="signin">Sign In</string>
+    <string name="password">Password</string>
+    <string name="password_length_error_message">Silahkan masukkan password dengan benar</string>
 </resources>
