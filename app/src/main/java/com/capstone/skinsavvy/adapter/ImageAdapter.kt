@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.capstone.skinsavvy.R
-import com.capstone.skinsavvy.model.ImageModel
+import com.capstone.skinsavvy.data.model.ImageModel
 
 class ImageAdapter: ListAdapter<ImageModel, ImageAdapter.ViewHolder>(DiffCallBack()) {
 

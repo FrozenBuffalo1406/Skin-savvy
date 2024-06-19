@@ -7,13 +7,14 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.capstone.skinsavvy.data.model.UserModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import java.util.prefs.Preferences
 
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "session")
 
-class UserPreference private constructor(private val dataStore: DataStore<Preferences>) {
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore("session")
+
+class UserPreference private constructor(private val dataStore: DataStore<Preferences>){
 
     suspend fun saveSession(user: UserModel) {
         dataStore.edit { preferences ->
@@ -22,8 +23,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             preferences[IS_LOGIN_KEY] = true
         }
     }
-
-    fun getSession(): Flow<UserModel> {
+    fun getSession() : Flow<UserModel> {
         return dataStore.data.map { preferences ->
             UserModel(
                 preferences[EMAIL_KEY] ?: "",
@@ -33,19 +33,18 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         }
     }
 
-    suspend fun logout() {
+    suspend fun signOut() {
         dataStore.edit { preferences ->
             preferences.clear()
         }
     }
-
     companion object {
         @Volatile
         private var INSTANCE: UserPreference? = null
 
         private val EMAIL_KEY = stringPreferencesKey("email")
         private val TOKEN_KEY = stringPreferencesKey("token")
-        private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
+        private val IS_LOGIN_KEY= booleanPreferencesKey("isSignin")
 
         fun getInstance(context: Context): UserPreference {
             return INSTANCE ?: synchronized(this) {

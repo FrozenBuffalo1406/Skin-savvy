@@ -1,25 +1,26 @@
 package com.capstone.skinsavvy.data.api
 
-import com.capstone.skinsavvy.data.response.SignInResponse
-import com.capstone.skinsavvy.data.response.SignUpResponse
+import com.capstone.skinsavvy.data.response.SigninResponse
+import com.capstone.skinsavvy.data.response.SignupResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 interface AuthService {
-
     @FormUrlEncoded
     @POST("register")
-    suspend fun register (
+    suspend fun signup (
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ) : SignUpResponse
+    ) : SignupResponse
 
     @FormUrlEncoded
     @POST("login")
-    suspend fun login (
+    suspend fun signin (
         @Field("email") email: String,
         @Field("password") password: String
-    ): SignInResponse
+    ): SigninResponse
+
+
 }

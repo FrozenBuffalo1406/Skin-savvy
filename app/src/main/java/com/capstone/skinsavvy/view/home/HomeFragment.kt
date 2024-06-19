@@ -23,10 +23,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        var viewModelFactory = MainViewModelFactory()
         var homeViewModel =
             ViewModelProvider(this)[HomeViewModel::class.java]
-
         val imageAdapter = ImageAdapter()
         binding.rvImageslider.adapter = imageAdapter
 
