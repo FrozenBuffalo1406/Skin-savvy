@@ -18,4 +18,6 @@
     <string name="signin">Sign In</string>
     <string name="password">Password</string>
     <string name="password_length_error_message">Silahkan masukkan password dengan benar</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
 </resources>
