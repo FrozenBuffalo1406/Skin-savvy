@@ -1,39 +1,47 @@
 package com.capstone.skinsavvy.data.repository
 
-import com.capstone.skinsavvy.data.api.AuthService
-import com.capstone.skinsavvy.data.model.UserModel
-import com.capstone.skinsavvy.data.pref.AuthPreference
-import com.capstone.skinsavvy.data.response.SigninResponse
-import com.capstone.skinsavvy.data.response.SignupResponse
-import retrofit2.HttpException
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
+import kotlinx.coroutines.tasks.await
+import javax.inject.Inject
 
-class AuthRepository(private val authService : AuthService, private val authPreference: AuthPreference) {
-    suspend fun signup(name: String, email: String, password: String): SignupResponse {
-        return authService.signup(name, email, password)
-    }
-    suspend fun signin(email: String, password: String): SigninResponse {
+class AuthRepository @Inject constructor(
+    private val firebaseAuth: FirebaseAuth
+) {
+    suspend fun signin(email: String, password: String): FirebaseUser? {
         return try {
-            val response = authService.signin(email, password)
-            if (!response.error!!) {
-                response.signinResult?.token?.let { token ->
-                    authPreference.saveSession(UserModel(email, token, true))
-                }
-            }
-            response
-        } catch (e: HttpException) {
-            when (e.code()) {
-                401 -> SigninResponse(error = true, message = "Invalid email or password")
-                else -> SigninResponse(error = true, message = "Failed to log in: ${e.message()}")
-            }
+            val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
+            result.user
         } catch (e: Exception) {
-            SigninResponse(error = true, message = "Network error: ${e.message}")
+            null
         }
     }
-    suspend fun saveSession(userModel: UserModel) {
-        authPreference.saveSession(userModel)
-    }
-    companion object {
-        fun getInstance(authService: AuthService, authPreference: AuthPreference) = AuthRepository(authService, authPreference)
+
+    suspend fun signup(email: String, password: String, displayName: String): FirebaseUser? {
+        return try {
+            val result = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
+            // Update user profile with display name
+            result.user?.let { user ->
+                val profileUpdates = UserProfileChangeRequest.Builder()
+                    .setDisplayName(displayName)
+                    .build()
+                user.updateProfile(profileUpdates).await()
+            }
+            result.user
+        } catch (e: FirebaseAuthUserCollisionException) {
+            null
+        } catch (e: Exception) {
+            // Handle other exceptions
+            null
+        }
     }
 
+    fun getCurrentUser(): FirebaseUser? = firebaseAuth.currentUser
+
+    fun logout() {
+        firebaseAuth.signOut()
+    }
 }

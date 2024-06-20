@@ -118,6 +118,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
 
+    <TextView
+        android:id="@+id/sign_up_ask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_ask"
+        app:layout_constraintStart_toStartOf="@id/loginButton"
+        app:layout_constraintEnd_toEndOf="@id/loginButton"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintHorizontal_bias="0.65"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/sign_up_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/sign_up_ask"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintEnd_toEndOf="@id/loginButton"/>
 
 
     <ProgressBar

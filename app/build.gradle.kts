@@ -1,8 +1,10 @@
 plugins {
     id("com.android.application")
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
     id("kotlin-parcelize")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -58,6 +60,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
 
     implementation(libs.androidx.room.common)
     implementation(libs.room.ktx)
@@ -67,6 +71,9 @@ dependencies {
 
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core.android)
+
+    //
+
 
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -82,4 +89,10 @@ dependencies {
     //glide
     implementation(libs.glide)
 
+    //hilt
+    implementation(libs.hilt.android)
+    // Required only if using Hilt's view model support
+    implementation(libs.androidx.hilt.lifecycle.viewmodel)
+    ksp (libs.hilt.android.compiler)
 }
+
