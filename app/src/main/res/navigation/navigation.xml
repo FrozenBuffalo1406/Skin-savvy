@@ -8,10 +8,7 @@
         android:id="@+id/homeFragment"
         android:name="com.capstone.skinsavvy.view.home.HomeFragment"
         android:label="Home"/>
-    <fragment
-        android:id="@+id/scanFragment"
-        android:name="com.capstone.skinsavvy.view.scan.ScanFragment"
-        android:label="Scan" />
+
     <fragment
         android:id="@+id/Profile"
         android:name="com.capstone.skinsavvy.view.history.HistoryFragment"

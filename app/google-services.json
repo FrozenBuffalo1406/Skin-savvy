@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "837655465392",
+    "project_id": "skinsavvy-4cdd9",
+    "storage_bucket": "skinsavvy-4cdd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837655465392:android:5facea7fb78276440a9a75",
+        "android_client_info": {
+          "package_name": "com.capstone.skinsavvy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837655465392-okhvovp26bh2qpup44groe8jnckkk2sh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.skinsavvy",
+            "certificate_hash": "4a23254639eb16062eb71362eb4f470aa4ab9b89"
+          }
+        },
+        {
+          "client_id": "837655465392-rtt70joes4heb093eqvrspm0ed94s2r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYbBcYlScSzGa3W0Ud-Vm43J5K3qeiyhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837655465392-rtt70joes4heb093eqvrspm0ed94s2r6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
