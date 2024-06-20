@@ -39,9 +39,9 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        binding.loginButton.setOnClickListener {
-            val email = binding.emailEditText.toString()
-            val password = binding.passwordEditText.toString()
+        binding.btnLogin.setOnClickListener {
+            val email = binding.etEmail.toString()
+            val password = binding.etPassword.toString()
             authViewModel.signin(email, password)
         }
     }
