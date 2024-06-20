@@ -21,4 +21,6 @@
     <string name="register">Register</string>
     <string name="username">Username</string>
     <string name="sign_up_ask">Belum Punya akun?</string>
+    <string name="sign_in_desc">Welcome Back To SkinSavvy</string>
+    <string name="name">Name</string>
 </resources>

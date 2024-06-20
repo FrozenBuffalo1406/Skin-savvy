@@ -21,13 +21,13 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.signupButton.setOnClickListener {
+        binding.signUpButton.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
             finish()
         }
-        binding.loginButton.setOnClickListener {
-            val email = binding.emailEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
+        binding.btnLogin.setOnClickListener {
+            val email = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }

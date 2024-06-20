@@ -28,20 +28,6 @@ class PasswordInput (context: Context, attrs: AttributeSet) : TextInputLayout(co
         }
     }
 
-    init {
-        context.theme.obtainStyledAttributes(
-            attrs,
-            R.styleable.PasswordInput,
-            0, 0
-        ).apply {
-            try {
-                hint = getString(R.styleable.PasswordInput_android_hint)
-            } finally {
-                recycle()
-            }
-        }
-    }
-
     fun setEditText(editText: TextInputEditText) {
         editText.addTextChangedListener(textWatcher)
     }
