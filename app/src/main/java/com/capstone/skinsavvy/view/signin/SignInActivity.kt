@@ -28,11 +28,6 @@ class SignInActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                signInViewModel.createUser(email, password)
-            } else {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
-            }
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }

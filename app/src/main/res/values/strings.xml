@@ -20,4 +20,5 @@
     <string name="password_length_error_message">Silahkan masukkan password dengan benar</string>
     <string name="register">Register</string>
     <string name="username">Username</string>
+    <string name="sign_up_ask">Belum Punya akun?</string>
 </resources>
