@@ -13,6 +13,5 @@ class UploadScanActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-
     }
 }

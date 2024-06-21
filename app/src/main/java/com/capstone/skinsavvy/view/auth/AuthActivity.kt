@@ -10,7 +10,9 @@ import com.capstone.skinsavvy.databinding.ActivityAuthBinding
 import com.capstone.skinsavvy.view.main.MainActivity
 import com.capstone.skinsavvy.view.signin.SignInActivity
 import com.capstone.skinsavvy.view.signup.SignUpActivity
+import dagger.hilt.android.lifecycle.HiltViewModel
 
+@HiltViewModel
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding : ActivityAuthBinding
     private val authViewModel: AuthViewModel by viewModels()
@@ -28,22 +30,8 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
-        authViewModel.loginStatus.observe(this) { isLoggedIn ->
-            if (isLoggedIn) {
-                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                navigateToMainScreen()
-            } else {
-                Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
-            }
-        }
-        authViewModel.registerStatus.observe(this) { isRegistered ->
-            if (isRegistered) {
-                Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
-                navigateToMainScreen()
-            } else {
-                Toast.makeText(this, "Registration failed.", Toast.LENGTH_SHORT).show()
-            }
-        }
+
+
 
 
 

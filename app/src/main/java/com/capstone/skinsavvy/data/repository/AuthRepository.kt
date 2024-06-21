@@ -1,14 +1,12 @@
 package com.capstone.skinsavvy.data.repository
 
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.coroutines.tasks.await
-import javax.inject.Inject
 
-class AuthRepository @Inject constructor(
+class AuthRepository (
     private val firebaseAuth: FirebaseAuth
 ) {
     suspend fun signin(email: String, password: String): FirebaseUser? {
@@ -34,7 +32,6 @@ class AuthRepository @Inject constructor(
         } catch (e: FirebaseAuthUserCollisionException) {
             null
         } catch (e: Exception) {
-            // Handle other exceptions
             null
         }
     }

@@ -5,19 +5,14 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/navigation_home" />
-    <item
-        android:id="@+id/navigation_product_recommendation"
-        android:title="@string/navigation_product"
-        />
+
     <item
         android:id="@+id/navigation_blank"
         android:title="" />
+
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/baseline_favorite_border_24"
         android:title="@string/navigation_history"/>
-    <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/account_icon_24"
-        android:title="@string/navigation_profile" />
+
 </menu>
