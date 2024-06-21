@@ -29,7 +29,7 @@ class ImageAdapter: ListAdapter<ImageModel, ImageAdapter.ViewHolder>(DiffCallBac
 
         fun bindData(item: ImageModel) {
             Glide.with(itemView)
-                .load(item.url)
+                .load(item.photoUrl)
                 .into(imageView)
         }
     }

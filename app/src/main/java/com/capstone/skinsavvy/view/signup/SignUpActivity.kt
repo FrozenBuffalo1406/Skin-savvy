@@ -4,19 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.capstone.skinsavvy.MyApp
 import com.capstone.skinsavvy.databinding.ActivitySignUpBinding
+import com.capstone.skinsavvy.factory.AuthViewModelFactory
 import com.capstone.skinsavvy.view.auth.AuthViewModel
 import com.capstone.skinsavvy.view.main.MainActivity
 import com.capstone.skinsavvy.view.main.MainActivity.Companion.USER_NAME
 import com.capstone.skinsavvy.view.signin.SignInActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
-    private val authViewModel : AuthViewModel by viewModels()
+    private lateinit var authViewModel : AuthViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +24,11 @@ class SignUpActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val repository = (application as MyApp).authRepository
+        authViewModel = ViewModelProvider(
+            this,
+            AuthViewModelFactory(repository)
+        )[AuthViewModel::class.java]
 
         authViewModel.registerStatus.observe(this) { isRegistered ->
             if (isRegistered) {
@@ -31,7 +36,7 @@ class SignUpActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
-                Toast.makeText(this, "Registration failed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Gagal registrasi.", Toast.LENGTH_SHORT).show()
             }
         }
 

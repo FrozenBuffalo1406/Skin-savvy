@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ListAdapter
-import com.capstone.skinsavvy.data.response.ListProductItem
+import com.capstone.skinsavvy.data.model.ListProductItem
 import com.capstone.skinsavvy.databinding.ProductItemBinding
 
 class ProductAdapter() : ListAdapter<ListProductItem, ProductAdapter.ProductViewHolder>(ProductDiffCallBack()) {

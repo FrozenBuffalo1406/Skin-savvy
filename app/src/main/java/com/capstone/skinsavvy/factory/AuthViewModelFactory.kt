@@ -5,10 +5,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.capstone.skinsavvy.data.repository.AuthRepository
 import com.capstone.skinsavvy.view.auth.AuthViewModel
 
+@Suppress("UNCHECKED_CAST")
 class AuthViewModelFactory(private val repository: AuthRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AuthViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
             return AuthViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
