@@ -6,29 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="24dp"
-    android:background="@color/pale_white"
+    android:background="@color/biru"
     tools:context=".view.auth.AuthActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/iv_logo"
-        android:layout_marginTop="45dp"
+        android:layout_width="300dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
         android:text="@string/welcome"
-        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_logo"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -50,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome_desc"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/dark_gold"/>
+        android:backgroundTint="@color/biru_bg"/>
 
     <Button
         android:layout_width="wrap_content"

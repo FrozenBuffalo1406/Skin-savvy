@@ -20,7 +20,16 @@
     <string name="password_length_error_message">Silahkan masukkan password dengan benar</string>
     <string name="register">Register</string>
     <string name="username">Username</string>
-    <string name="sign_up_ask">Belum Punya akun?</string>
-    <string name="sign_in_desc">Welcome Back To SkinSavvy</string>
-    <string name="name">Name</string>
+    <string name="story_app">SkinSavvy</string>
+    <string name="desc_ss">"Solusi Cerdas untuk Kulit Sehatmu"</string>
+    <string name="SkinnSavvy">SkinnSavvy</string>
+    <string name="sign_In">Sign In</string>
+    <string name="title_signin_page">Wellcome</string>
+    <string name="SignUp">Sign Up\n</string>
+    <string name="SignIn">Sign In</string>
+    <string name="navigation_favorite">Favorite</string>
+    <string name="title_home">Home\n</string>
+    <string name="Info">About</string>
+    <string name="title_article">Lets See Ur Faforite Product</string>
+    <string name="title_Product">Let\'s See Your Fav Product</string>
 </resources>
